@@ -1,5 +1,5 @@
 /*
-Name:  ביאן מריסאת +רואיה סעיד 
+Name:  ביאן מריסאת + רואיה סעיד
 Date: 2026-06-06
 Description: Express server for ex1B. Serves static files from public
 and JSON data from private through API routes.

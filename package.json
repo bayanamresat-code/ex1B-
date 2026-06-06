@@ -9,6 +9,6 @@
   "author": "Bayan Marisat",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.22.2"
+    "express": "^4.19.2"
   }
 }

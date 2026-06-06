@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "author": "Sofia K.",
+    "role": "AP CS student",
+    "text": "I remember the first time I met Mickey the Debug Dog. Mickey looked so fierce as they stared at the code with me. I slowly explained everything and they listened to my every word. The pauses were uncomfortable, but then I saw it. Mickey saved me hours of anguish."
+  },
+  {
+    "id": 2,
+    "author": "Moshe J.",
+    "role": "Software Engineer",
+    "text": "Mickey has been an amazing help to me, someone who listens to every problem and is never judgmental."
+  },
+  {
+    "id": 3,
+    "author": "Noam H.",
+    "role": "Student",
+    "text": "Mickey is my debugging angel. When I was alone and stuck, they always came and helped me recover from stress and pain."
+  }
+]

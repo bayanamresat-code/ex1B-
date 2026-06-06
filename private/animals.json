@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Distance Duck",
+    "role": "Remote debugging expert",
+    "description": "Always ready to help with tricky bugs from far away.",
+    "image": "friend1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "NIPPER the Debug Dog",
+    "role": "Bug support friend",
+    "description": "A loyal squad member who keeps you focused during debugging.",
+    "image": "friend2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Debug David",
+    "role": "Creative debugging partner",
+    "description": "Helps you see your code from a different angle.",
+    "image": "friend3.jpg"
+  }
+]

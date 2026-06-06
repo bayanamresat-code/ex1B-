@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Patient listener",
+    "description": "Mickey listens carefully to every explanation without interrupting."
+  },
+  {
+    "id": 2,
+    "title": "Soft and comforting",
+    "description": "A comforting presence during long coding nights."
+  },
+  {
+    "id": 3,
+    "title": "Bug finder",
+    "description": "Helps you notice the small details you missed."
+  }
+]

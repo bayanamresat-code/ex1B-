@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Bayan Marisat",
+  "author": "Bayan Marisat + roaya Saed",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2"

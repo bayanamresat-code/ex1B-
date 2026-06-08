@@ -1,10 +1,11 @@
 /*
-Name:  ביאן מריסאת + רואיה סעיד
-Date: 2026-06-06
-Description: Client-side JavaScript for loading JSON data
-from the server and rendering profile sections dynamically.
+  Names:  ביאן מריסאת + רואיה סעיד
+  Date: 2026-06-06
+  Description: Client-side JavaScript for loading JSON data
+  from the server and rendering profile sections dynamically.
 */
 
+// Fetches JSON data from the given URL and returns the parsed result
 async function fetchJsonData(url) {
   const response = await fetch(url);
   if (!response.ok) {
@@ -13,8 +14,10 @@ async function fetchJsonData(url) {
   return response.json();
 }
 
+// Renders the animals (debugging squad) section
 function renderAnimals(animals) {
   const container = document.getElementById("animalsContainer");
+  if (!container) return;
   container.innerHTML = "";
 
   animals.forEach((animal) => {
@@ -30,6 +33,7 @@ function renderAnimals(animals) {
   });
 }
 
+// Renders the traits section
 function renderTraits(traits) {
   const container = document.getElementById("traitsContainer");
   if (!container) return;
@@ -46,8 +50,10 @@ function renderTraits(traits) {
   });
 }
 
+// Renders the reviews (endorsements) section
 function renderReviews(reviews) {
   const container = document.getElementById("reviewsContainer");
+  if (!container) return;
   container.innerHTML = "";
 
   reviews.forEach((review) => {
@@ -62,6 +68,15 @@ function renderReviews(reviews) {
   });
 }
 
+// Shows an error message in the main content area
+function showError(message) {
+  const main = document.querySelector("main");
+  if (main) {
+    main.innerHTML = `<p class="error-message">${message}</p>`;
+  }
+}
+
+// Loads all page data in parallel from the server APIs
 async function loadPageData() {
   try {
     const [animals, traits, reviews] = await Promise.all([
@@ -75,6 +90,7 @@ async function loadPageData() {
     renderReviews(reviews);
   } catch (error) {
     console.error("Error loading page data:", error);
+    showError("Failed to load page content. Please try again later.");
   }
 }
 

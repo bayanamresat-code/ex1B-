@@ -1,38 +1,63 @@
 /*
-Name:  ביאן מריסאת + רואיה סעיד
-Date: 2026-06-06
-Description: Express server for ex1B. Serves static files from public
-and JSON data from private through API routes.
+  Names:  ביאן מריסאת + רואיה סעיד
+  Date: 2026-06-06
+  Description: Express server for ex1B. Serves static files from public
+  and JSON data from private through API routes.
+
+  Imports:
+  - express: web framework for handling HTTP routes and static files
+  - fs/promises: async file system reading
+  - path: building cross-platform file paths
 */
 
 const express = require("express");
-const fs = require("fs");
+const fs = require("fs").promises;
 const path = require("path");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
+// Serve static files (HTML, CSS, JS, images) from the public folder
 app.use(express.static(path.join(__dirname, "public")));
 
-function readJsonFile(fileName) {
+// Reads a JSON file from the private folder asynchronously
+async function readJsonFile(fileName) {
   const filePath = path.join(__dirname, "private", fileName);
-  const fileContent = fs.readFileSync(filePath, "utf8");
+  const fileContent = await fs.readFile(filePath, "utf8");
   return JSON.parse(fileContent);
 }
 
-app.get("/api/animals", (request, response) => {
-  const animals = readJsonFile("animals.json");
-  response.json(animals);
+// Returns the list of animals as JSON
+app.get("/api/animals", async (request, response) => {
+  try {
+    const animals = await readJsonFile("animals.json");
+    response.json(animals);
+  } catch (error) {
+    console.error("Error reading animals.json:", error);
+    response.status(500).json({ error: "Failed to load animals data" });
+  }
 });
 
-app.get("/api/animaltraits", (request, response) => {
-  const animalTraits = readJsonFile("animaltraits.json");
-  response.json(animalTraits);
+// Returns the list of animal traits as JSON
+app.get("/api/animaltraits", async (request, response) => {
+  try {
+    const animalTraits = await readJsonFile("animaltraits.json");
+    response.json(animalTraits);
+  } catch (error) {
+    console.error("Error reading animaltraits.json:", error);
+    response.status(500).json({ error: "Failed to load traits data" });
+  }
 });
 
-app.get("/api/reviews", (request, response) => {
-  const reviews = readJsonFile("reviews.json");
-  response.json(reviews);
+// Returns the list of reviews as JSON
+app.get("/api/reviews", async (request, response) => {
+  try {
+    const reviews = await readJsonFile("reviews.json");
+    response.json(reviews);
+  } catch (error) {
+    console.error("Error reading reviews.json:", error);
+    response.status(500).json({ error: "Failed to load reviews data" });
+  }
 });
 
 app.listen(port, () => {

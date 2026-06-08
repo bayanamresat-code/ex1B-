@@ -25,7 +25,7 @@ h1, h2, h3 {
 .banner {
   position: relative;
   height: 320px;
-  background: url('banner.jpg') center/cover no-repeat;
+  background: url('banner.png') ;
   display: flex;
   align-items: center;
   justify-content: center;

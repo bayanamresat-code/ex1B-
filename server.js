@@ -1,15 +1,16 @@
 /*
-  Names:  ביאן מריסאת + רואיה סעיד
+  Names: ביאן מריסאת + רואיה סעיד
   Date: 2026-06-06
-  Description: Express server for ex1B. Serves static files from public
-  and JSON data from private through API routes.
+  Description:
+  This file creates an Express server for the profile website.
+  The server serves static files from the public folder and provides
+  API routes that return JSON data from files stored in the private folder.
 
   Imports:
-  - express: web framework for handling HTTP routes and static files
-  - fs/promises: async file system reading
-  - path: building cross-platform file paths
+  - express: used to create the web server and routes.
+  - fs/promises: used to read JSON files asynchronously.
+  - path: used to create safe file paths.
 */
-
 const express = require("express");
 const fs = require("fs").promises;
 const path = require("path");

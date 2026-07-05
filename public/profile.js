@@ -1,8 +1,10 @@
 /*
-  Names:  ביאן מריסאת + רואיה סעיד
+  Names: ביאן מריסאת + רואיה סעיד
   Date: 2026-06-06
-  Description: Client-side JavaScript for loading JSON data
-  from the server and rendering profile sections dynamically.
+  Description:
+  This client-side JavaScript file loads JSON data from the server
+  using fetch requests. It then creates HTML elements dynamically
+  and places the animals, traits, and reviews inside the profile page.
 */
 
 // Fetches JSON data from the given URL and returns the parsed result

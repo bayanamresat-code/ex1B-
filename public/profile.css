@@ -1,15 +1,41 @@
 /*
-Name:  ביאן מריסאת + רואיה סעיד
+Names: Bayan Marisat + Roaya Saed
 Date: 2026-06-06
-Description: Styles for Mickey the Debug Dog profile page.
+
+File: profile.css
+
+Description:
+This stylesheet defines the complete visual appearance of the
+"Mickey the Debug Dog" profile website.
+
+The file is responsible for:
+- Resetting default browser spacing.
+- Setting global typography and page background.
+- Designing the banner and profile sections.
+- Styling information cards, traits, reviews and animal cards.
+- Organizing the layout using CSS Grid.
+- Adding hover effects and image styling.
+- Making the page responsive for mobile devices using media queries.
+
+===============================================================================
 */
 
+/* ==========================================================================
+   Global Reset
+   Removes default browser margins and paddings and ensures
+   consistent box sizing throughout the page.
+   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ==========================================================================
+   General Page Styling
+   Defines the default font, background image, text color
+   and line spacing for the entire document.
+   ========================================================================== */
 body {
   font-family: 'Bree Serif', Georgia, serif;
   background: url('background.jpg') center/cover fixed no-repeat;
@@ -17,21 +43,31 @@ body {
   line-height: 1.6;
 }
 
+/* ==========================================================================
+   Headings
+   Applies a decorative font and consistent color to all headings.
+   ========================================================================== */
 h1, h2, h3 {
   font-family: 'Rammetto One', Impact, sans-serif;
   color: #4a2c1a;
 }
 
+/* ==========================================================================
+   Banner Section
+   Creates the top hero section with a background image and
+   centers the banner content.
+   ========================================================================== */
 .banner {
   position: relative;
   height: 320px;
-  background: url('banner.png') ;
+  background: url('banner.png');
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+/* Dark transparent layer placed above the banner image */
 .banner-overlay {
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
@@ -40,22 +76,32 @@ h1, h2, h3 {
   max-width: 700px;
 }
 
+/* Main banner heading */
 .banner-overlay h1 {
   color: #ffd56b;
   font-size: 2.5rem;
   margin-bottom: 0.75rem;
 }
 
+/* Banner description */
 .banner-overlay p {
   font-size: 1.1rem;
 }
 
+/* ==========================================================================
+   Main Page Container
+   Centers all page content and limits maximum width.
+   ========================================================================== */
 .page-container {
   max-width: 1100px;
   margin: 2rem auto;
   padding: 0 1.5rem;
 }
 
+/* ==========================================================================
+   Profile Section
+   Displays the profile image and information side by side using CSS Grid.
+   ========================================================================== */
 .profile-section {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -67,12 +113,14 @@ h1, h2, h3 {
   margin-bottom: 2.5rem;
 }
 
+/* Centers the profile image */
 .profile-image-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
+/* Styles the main profile image */
 .profile-image {
   width: 100%;
   max-width: 260px;
@@ -80,6 +128,10 @@ h1, h2, h3 {
   border: 4px solid #ffd56b;
 }
 
+/* ==========================================================================
+   Information Card
+   Styles the profile information area.
+   ========================================================================== */
 .info-card h2 {
   margin-bottom: 1rem;
   color: #6b3410;
@@ -89,27 +141,35 @@ h1, h2, h3 {
   margin-bottom: 1.5rem;
 }
 
+/* Two-column layout for profile details */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
+/* Subheadings inside the information card */
 .info-grid h3 {
   font-size: 1rem;
   color: #8a4a1a;
   margin: 0.75rem 0 0.25rem;
 }
 
+/* Removes default bullets from detail lists */
 .profile-details {
   list-style: none;
   padding-left: 0;
 }
 
+/* Individual detail list items */
 .profile-details li {
   padding: 0.2rem 0;
 }
 
+/* ==========================================================================
+   Dynamic Sections
+   Shared appearance for Traits, Reviews and Squad sections.
+   ========================================================================== */
 .traits-section,
 .reviews-section,
 .squad-section {
@@ -120,6 +180,7 @@ h1, h2, h3 {
   margin-bottom: 2.5rem;
 }
 
+/* Section headings */
 .traits-section h2,
 .reviews-section h2,
 .squad-section h2 {
@@ -128,6 +189,7 @@ h1, h2, h3 {
   text-align: center;
 }
 
+/* Responsive grid used for dynamically created cards */
 .traits-grid,
 .reviews-grid,
 .animals-grid {
@@ -136,6 +198,7 @@ h1, h2, h3 {
   gap: 1.25rem;
 }
 
+/* Shared card appearance */
 .trait-card,
 .review-card,
 .animal-card {
@@ -146,12 +209,14 @@ h1, h2, h3 {
   transition: transform 0.2s ease;
 }
 
+/* Hover animation */
 .trait-card:hover,
 .review-card:hover,
 .animal-card:hover {
   transform: translateY(-4px);
 }
 
+/* Animal image styling */
 .animal-card img {
   width: 100%;
   height: 180px;
@@ -160,16 +225,22 @@ h1, h2, h3 {
   margin-bottom: 0.75rem;
 }
 
+/* Card headings */
 .animal-card h3,
 .trait-card h3 {
   margin-bottom: 0.5rem;
   color: #6b3410;
 }
 
+/* Paragraph spacing inside reviews */
 .review-card p {
   margin-bottom: 0.5rem;
 }
 
+/* ==========================================================================
+   Reviews Header Image
+   Displays the decorative image above the endorsements.
+   ========================================================================== */
 .reviews-header-image {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -181,6 +252,10 @@ h1, h2, h3 {
   border: 3px solid #ffd56b;
 }
 
+/* ==========================================================================
+   Footer
+   Styles the footer displayed at the bottom of the page.
+   ========================================================================== */
 .page-footer {
   text-align: center;
   padding: 1.5rem;
@@ -188,13 +263,23 @@ h1, h2, h3 {
   color: #fff;
 }
 
+/* ==========================================================================
+   Responsive Design
+   Adapts the layout for tablets and mobile devices.
+   ========================================================================== */
 @media (max-width: 768px) {
+
+  /* Stack profile image above profile information */
   .profile-section {
     grid-template-columns: 1fr;
   }
+
+  /* Display information blocks in a single column */
   .info-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Reduce banner title size on smaller screens */
   .banner-overlay h1 {
     font-size: 1.8rem;
   }
